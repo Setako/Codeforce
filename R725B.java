@@ -1,10 +1,23 @@
 import java.util.HashMap;
 import java.util.Scanner;
-
-public class BASE {
+/**
+ * Unsolved
+ */
+public class R725B {
     static Scanner in = new Scanner(System.in);
+    @SuppressWarnings("unchecked")
+	static HashMap<Character, Integer> map =  charOrderMap(new HashMap<>(), "fedabc", 1, true);
 	public static void solve(){
-		
+		String arr = in.nextLine();
+		long r = Long.parseLong(arr.substring(0, arr.length()-1));
+		int s = map.get(arr.substring(arr.length()-1).toCharArray()[0]);
+		long ans = s;
+		if(r%4 == 0 ||r%4 == 2)
+		{
+			ans = ans+7;
+		}
+		ans = (Math.round(Math.floor((r-1)/4)))*16+ans;
+		System.out.println(ans);
 	}
 	
 	@SuppressWarnings({ "rawtypes", "unchecked" })
