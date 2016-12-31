@@ -1,10 +1,12 @@
 import java.util.HashMap;
 import java.util.Scanner;
 
-public class BASE {
+public class R750A {
     static Scanner in = new Scanner(System.in);
 	public static void solve(){
-		
+		int n = in.nextInt();
+		int k = in.nextInt();
+		System.out.println((int)Math.min(n,Math.floor(quadraticEquationRoot1(5, 5, -(2*(240-k))))));
 	}
 	
 	@SuppressWarnings({ "rawtypes", "unchecked" })
@@ -27,17 +29,10 @@ public class BASE {
 		solve();
 	}
 	
-	public static double quadraticEquationRootMax(double a, double b, double c){    
+	public static  double quadraticEquationRoot1(double a, double b, double c){    
 	    double root1, root2;
 	    root1 = (-b + Math.sqrt(Math.pow(b, 2) - 4*a*c)) / (2*a);
 	    root2 = (-b - Math.sqrt(Math.pow(b, 2) - 4*a*c)) / (2*a);
 	    return Math.max(root1, root2);  
-	}
-	
-	public static double quadraticEquationRootMin(double a, double b, double c){    
-	    double root1, root2;
-	    root1 = (-b + Math.sqrt(Math.pow(b, 2) - 4*a*c)) / (2*a);
-	    root2 = (-b - Math.sqrt(Math.pow(b, 2) - 4*a*c)) / (2*a);
-	    return Math.min(root1, root2);  
 	}
 }

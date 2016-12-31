@@ -1,9 +1,37 @@
 import java.util.HashMap;
 import java.util.Scanner;
 
-public class BASE {
+public class R750B {
     static Scanner in = new Scanner(System.in);
 	public static void solve(){
+		boolean ok = true;
+		int n = in.nextInt();
+		in.nextLine();
+		int y =0;
+		for(int i = 0;i<n;i++){
+			int ay = in.nextInt();
+			String s = in.nextLine();
+			if(s.equals(" South")){
+				y = y+ay;
+				if(y >20000||y<0){
+					ok = false;
+				}
+			}
+			else if(s.equals(" North")){
+				y =y-ay;
+				if(y >20000||y<0){
+					ok = false;
+				}
+			}else if(y == 20000||y == 0){
+				ok = false;
+			}
+		}
+		if(y!=0||ok==false){
+			System.out.println("NO");
+		}
+		else{
+			System.out.println("YES");
+		}
 		
 	}
 	
@@ -25,19 +53,5 @@ public class BASE {
 	
 	public static void main(String args[]) {
 		solve();
-	}
-	
-	public static double quadraticEquationRootMax(double a, double b, double c){    
-	    double root1, root2;
-	    root1 = (-b + Math.sqrt(Math.pow(b, 2) - 4*a*c)) / (2*a);
-	    root2 = (-b - Math.sqrt(Math.pow(b, 2) - 4*a*c)) / (2*a);
-	    return Math.max(root1, root2);  
-	}
-	
-	public static double quadraticEquationRootMin(double a, double b, double c){    
-	    double root1, root2;
-	    root1 = (-b + Math.sqrt(Math.pow(b, 2) - 4*a*c)) / (2*a);
-	    root2 = (-b - Math.sqrt(Math.pow(b, 2) - 4*a*c)) / (2*a);
-	    return Math.min(root1, root2);  
 	}
 }
