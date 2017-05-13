@@ -1,33 +1,24 @@
-import java.math.BigInteger;
 import java.util.HashMap;
 import java.util.Scanner;
 
-/**
- * 
- * Failed
- * Time limit exceeded
- *
- */
-
-public class R805D {
+public class R794B {
 	static Scanner in = new Scanner(System.in);
 
 	public static void solve() {
-		String s = in.nextLine();
-		char[] sarr = s.toCharArray();
-		BigInteger reslut = new BigInteger("0");
-		int n = s.length();
-		BigInteger counting = new BigInteger("0");
-		for(int i =n-1;i>=0;i--){
-			if(sarr[i]=='b'){
-				counting = counting.add(new BigInteger("1"));
+		String ans = null;
+		int n = in.nextInt();
+		int h = in.nextInt();
+		double a = h / Math.sqrt(n);
+		double stacking = 0;
+		for (int i = 1; i < n; i++) {
+			if (ans == null) {
+				ans = "" + ((Math.sqrt(i) - Math.sqrt(i - 1)) * a+stacking);
+			} else {
+				ans = ans + " " + ((Math.sqrt(i) - Math.sqrt(i - 1)) * a+stacking);
 			}
-			if(sarr[i]=='a'){
-				reslut = reslut.add(counting).mod(new BigInteger("1000000007"));
-				counting = counting.multiply(new BigInteger("2"));
-			}
+			stacking = (Math.sqrt(i) - Math.sqrt(i - 1)) * a+stacking;
 		}
-		System.out.println(reslut);
+		System.out.println(ans);
 	}
 
 	@SuppressWarnings({ "rawtypes", "unchecked" })
