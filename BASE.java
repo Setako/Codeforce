@@ -6,23 +6,7 @@ public class BASE {
 	public static void solve(){
 		
 	}
-	
-	@SuppressWarnings({ "rawtypes", "unchecked" })
-	public static HashMap charOrderMap(HashMap inputMap,String orderingString,int startFrom,boolean charAsKey){
-		char[] chars = orderingString.toCharArray();
-		if(charAsKey){
-			for(int i = 0;i< chars.length;i++){
-				inputMap.put(chars[i], i+startFrom);
-			}
-		}
-		else{
-			for(int i = 0;i< chars.length;i++){
-				inputMap.put(i+startFrom, chars[i]);
-			}
-		}
-		return inputMap;
-	}
-	
+
 	public static void main(String args[]) {
 		solve();
 	}
