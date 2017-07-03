@@ -1,14 +1,20 @@
+import java.util.HashMap;
 import java.util.Scanner;
-import static java.lang.Math.min;
-import static java.lang.Math.max;
-import static java.lang.Math.round;
-import static java.lang.Math.ceil;
-import static java.lang.Math.floor;
 
-public class BASE {
+public class R822A {
     static Scanner in = new Scanner(System.in);
-    public static void solve(){
-		
+	public static void solve(){
+		int a = in.nextInt();
+		int b = in.nextInt();
+		System.out.println(factorial(Math.min(a, b)));		
+	}
+	
+	public static int factorial(int k){
+		int reslut = 1;
+		for(int i =1;i<=k;i++){
+			reslut = reslut*i;
+		}
+		return reslut;
 	}
 
 	public static void main(String args[]) {
@@ -28,17 +34,4 @@ public class BASE {
 	    root2 = (-b - Math.sqrt(Math.pow(b, 2) - 4*a*c)) / (2*a);
 	    return Math.min(root1, root2);  
 	}
-
-    public static void printf(String f, Object... args){
-        System.out.printf(f,args);
-    }
-}
-
-class Pair<A,B>{
-    A a;
-    B b;
-    public Pair(A a, B b){
-        this.a = a;
-        this.b = b;
-    }
 }
